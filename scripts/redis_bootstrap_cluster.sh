@@ -1,4 +1,9 @@
 #!/bin/bash
+redis_master_private_ips_with_port=$1
+redis_replica_private_ips_with_port=$2
+redis_password=$3
+visible_script_output=$4
+
 ${visible_script_output}set -x
 ${visible_script_output}exec 3>&1 4>&2
 ${visible_script_output}trap 'exec 2>&4 1>&3' 0 1 2 3

@@ -1,4 +1,16 @@
 #!/bin/bash
+
+redis_port1=6379
+redis_port2=16379
+sentinel_port=26379
+redis_version=$1
+cluster_enabled=$2
+add_iscsi_volume=$3
+redis_password=$4
+master_fqdn=$5
+master_private_ip=$6
+visible_script_output=$7
+
 ${visible_script_output}set -x
 ${visible_script_output}exec 3>&1 4>&2
 ${visible_script_output}trap 'exec 2>&4 1>&3' 0 1 2 3
